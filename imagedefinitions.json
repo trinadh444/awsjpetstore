@@ -1,6 +1,6 @@
 [
   {
-    "name": "ecs-java",
-    "imageUri": "165421142945.dkr.ecr.us-west-2.amazonaws.com/awsjava:latest"
+    "name": "custom-service",
+    "imageUri": "972295139066.dkr.ecr.us-east-2.amazonaws.com/test:latest"
   }
 ]
