@@ -1,0 +1,32 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd">
+  <localRepository/>
+  <interactiveMode/>
+  <usePluginRegistry/>
+  <offline/>
+ 
+  <profiles>
+   <profile>
+    <id>sai-sample</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>sai-sample</id>
+        <url>https://sai-972295139066.d.codeartifact.us-east-2.amazonaws.com/maven/sample/</url>
+      </repository>
+    </repositories>
+  </profile>
+ </profiles>
+  
+ <servers>
+  <server>
+    <id>sai-sample</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+ </servers> 
+  
+  
+</settings>
