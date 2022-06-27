@@ -1,0 +1,31 @@
+name: 'Synk Code Scan'
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+      - .github/workflows/SynkScan.yml
+
+jobs:
+  CodeScan:
+    name: 'Synk Scan'
+    runs-on: ubuntu-latest
+    environment: test
+    
+    steps:
+    
+    ## Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Download Snyk
+      run: |
+         brew tap snyk/tap
+         brew install snyk
+           
+    - name: Auth Synk 
+      run: snyk auth 00d132d0-d20a-4c06-8495-cbfee1bd7530
+      
+    - name: Synk Code Scan
+      run: snyk code test .
